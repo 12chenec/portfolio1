@@ -25,7 +25,7 @@ import SFMonoSemiboldItalicWoff from '@fonts/SFMono/SFMono-SemiboldItalic.woff';
 import SFMonoSemiboldItalicWoff2 from '@fonts/SFMono/SFMono-SemiboldItalic.woff2';
 
 import Cotta from '@fonts/Cotta/Cotta.woff';
-import Archia from '@fonts/Archia/Archia.woff';
+import Archia from '@fonts/Archia/archia.woff';
 
 const calibreNormalWeights = {
   400: [CalibreRegularWoff, CalibreRegularWoff2],
