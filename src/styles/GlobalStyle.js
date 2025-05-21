@@ -14,6 +14,25 @@ const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
   }
 
+  body::before {
+    content: '';
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: 
+      radial-gradient( at 100% 0%,rgb(242, 162, 125) 0%,rgb(244, 124, 216) 15%, transparent 70% ), 
+      radial-gradient( circle at 0% 20%,rgb(78, 116, 227) 0%, #163398 40%, transparent 90%),
+      radial-gradient( at 80% 110%,rgb(59, 123, 214) 0%, #163398 40%, transparent 80% ),
+      radial-gradient( at 70% 20%,rgb(16, 44, 145) 0%,rgb(10, 24, 84) 70% );
+    background-blend-mode: normal;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+    transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
   *,
   *:before,
   *:after {
@@ -53,17 +72,17 @@ const GlobalStyle = createGlobalStyle`
   /* Scrollbar Styles */
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--dark-slate) var(--navy);
+    scrollbar-color: var(--dark-slate) var(--light-shadow);
   }
   ::-webkit-scrollbar {
     width: 12px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--navy);
+    background: var(--light-shadow);
   }
   ::-webkit-scrollbar-thumb {
     background-color: var(--dark-slate);
-    border: 3px solid var(--navy);
+    border: 3px solid var(--light-shadow);
     border-radius: 10px;
   }
 
@@ -74,7 +93,6 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: var(--navy);
     color: var(--slate);
     font-family: var(--font-sans);
     font-size: var(--fz-xl);
@@ -166,12 +184,14 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 0 10px 0;
     font-weight: 600;
     color: var(--lightest-slate);
+    font-family: 'Cotta';
     line-height: 1.1;
   }
 
   .big-heading {
     margin: 0;
     font-size: clamp(40px, 8vw, 80px);
+    font-family: 'Cotta';
   }
 
   .medium-heading {
@@ -197,7 +217,7 @@ const GlobalStyle = createGlobalStyle`
       color: var(--green);
       font-family: var(--font-mono);
       font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
-      font-weight: 400;
+      font-weight: 600;
 
       @media (max-width: 480px) {
         margin-bottom: -3px;
@@ -213,7 +233,7 @@ const GlobalStyle = createGlobalStyle`
       width: 300px;
       height: 1px;
       margin-left: 20px;
-      background-color: var(--lightest-navy);
+      background-color: var(--dark-slate);
 
       @media (max-width: 1080px) {
         width: 200px;

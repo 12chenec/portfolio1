@@ -19,7 +19,7 @@ const StyledLoader = styled.div`
 
   .logo-wrapper {
     width: max-content;
-    max-width: 100px;
+    max-width: 220px;
     transition: var(--transition);
     opacity: ${props => (props.isMounted ? 1 : 0)};
     svg {
@@ -29,8 +29,24 @@ const StyledLoader = styled.div`
       margin: 0 auto;
       fill: none;
       user-select: none;
-      #B {
-        opacity: 0;
+      #c-path {
+      }
+      #star {
+      }
+      #light {
+        opacity: 0.8;
+      }
+      #C1 {
+        opacity: 1;
+      }
+      #C2 {
+        opacity: 1;
+      }
+      #p1,
+      #p2,
+      #p3,
+      #p4 {
+        transform-origin: center center;
       }
     }
   }
@@ -44,23 +60,83 @@ const Loader = ({ finishLoading }) => {
       complete: () => finishLoading(),
     });
 
-    loader
+    const path = anime.path('#c-path');
+
+    anime({
+      targets: '#logo #C1',
+      delay: 1400,
+      clipPath: ['inset(0 0 50% 100%)', 'inset(0 0 30% 0%)'],
+      duration: 480,
+      easing: 'easeInQuart',
+    });
+    anime({
+      targets: '#logo #C2',
+      delay: 1880,
+      clipPath: ['inset(50% 100% 0 0)', 'inset(50% 0% 0 0)'],
+      duration: 450,
+      easing: 'easeOutQuart',
+    });
+
+    anime({
+      targets: ['#logo #star', '#logo #light'],
+      delay: 800,
+      translateX: path('x'),
+      translateY: path('y'),
+      duration: 1500,
+      easing: 'easeInOutQuart',
+    });
+
+    anime({
+      targets: '#logo #light',
+      delay: 400,
+      scale: [0, 1.5],
+      duration: 800,
+      easing: 'easeOutQuad',
+    });
+
+    const pTimeline = anime.timeline();
+
+    pTimeline
       .add({
-        targets: '#logo path',
-        delay: 300,
-        duration: 1500,
-        easing: 'easeInOutQuart',
-        strokeDashoffset: [anime.setDashoffset, 0],
+        targets: ['#logo #p1', '#logo #p2', '#logo #p3', '#logo #p4'],
+        scale: [0, 1],
+        delay: anime.stagger(50, { start: 300 }), // stagger if you want, or use same delay
+        duration: 700,
+        easing: 'easeOutQuad',
       })
       .add({
-        targets: '#logo #B',
-        duration: 700,
+        targets: ['#logo #p1', '#logo #p2', '#logo #p3', '#logo #p4'],
+        scale: [1, 1.3],
+        duration: 1700,
         easing: 'easeInOutQuart',
-        opacity: 1,
+      });
+
+    loader
+      .add({
+        targets: '#logo #star',
+        delay: 300,
+        scale: [0, 1],
+        duration: 250,
+        easing: 'easeInQuad',
+      })
+      .add({
+        targets: '#logo #star',
+        scale: [1, 1.5],
+        duration: 550,
+        easing: 'easeOutQuad',
+      })
+      .add({
+        targets: ['#logo #star', '#logo #light'],
+        scale: [1.5, 0.7],
+        translateX: path('x'),
+        translateY: path('y'),
+        rotate: -360,
+        duration: 1500,
+        easing: 'easeInOutQuart',
       })
       .add({
         targets: '#logo',
-        delay: 500,
+        delay: 300,
         duration: 300,
         easing: 'easeInOutQuart',
         opacity: 0,
@@ -68,7 +144,7 @@ const Loader = ({ finishLoading }) => {
       })
       .add({
         targets: '.loader',
-        duration: 200,
+        duration: 300,
         easing: 'easeInOutQuart',
         opacity: 0,
         zIndex: -1,

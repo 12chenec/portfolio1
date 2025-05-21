@@ -2,27 +2,32 @@ import { css } from 'styled-components';
 
 const variables = css`
   :root {
-    --dark-navy: #020c1b;
-    --navy: #0a192f;
-    --light-navy: #112240;
-    --lightest-navy: #233554;
-    --navy-shadow: rgba(2, 12, 27, 0.7);
-    --dark-slate: #495670;
-    --slate: #8892b0;
-    --light-slate: #a8b2d1;
-    --lightest-slate: #ccd6f6;
-    --white: #e6f1ff;
-    --green: #64ffda;
+    --dark-navy: #0d135a;
+    --navy: #1d2360;
+    --light-navy: #24296e;
+    --lightest-navy: #393d77;
+    --navy-shadow: rgba(13, 19, 90, 0.7);
+    --light-shadow: rgba(13, 19, 90, 0.3);
+    --dark-slate: rgba(255, 255, 255, 0.3);
+    --slate: rgb(237, 237, 255);
+    --light-slate: rgb(215, 217, 255);
+    --lightest-slate: rgb(242, 243, 255);
+    --white: rgb(243, 248, 255);
+    --green: rgb(142, 255, 255);
     --green-tint: rgba(100, 255, 218, 0.1);
     --pink: #f57dff;
-    --blue: #57cbff;
+    --lightblue: #57cbff;
+    --yellow: #fcecba;
+    --purple: #6e6ae2;
+    --darkblue: #1e69e1;
+    --orange: #f4b18a;
 
     --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;
-    --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    --font-mono: 'Archia', 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 
-    --fz-xxs: 12px;
-    --fz-xs: 13px;
+    --fz-xxs: 15px;
+    --fz-xs: 15px;
     --fz-sm: 14px;
     --fz-md: 16px;
     --fz-lg: 18px;

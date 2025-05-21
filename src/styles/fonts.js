@@ -24,6 +24,9 @@ import SFMonoRegularItalicWoff2 from '@fonts/SFMono/SFMono-RegularItalic.woff2';
 import SFMonoSemiboldItalicWoff from '@fonts/SFMono/SFMono-SemiboldItalic.woff';
 import SFMonoSemiboldItalicWoff2 from '@fonts/SFMono/SFMono-SemiboldItalic.woff2';
 
+import Cotta from '@fonts/Cotta/Cotta.woff';
+import Archia from '@fonts/Archia/Archia.woff';
+
 const calibreNormalWeights = {
   400: [CalibreRegularWoff, CalibreRegularWoff2],
   500: [CalibreMediumWoff, CalibreMediumWoff2],
@@ -46,6 +49,14 @@ const sfMonoItalicWeights = {
   600: [SFMonoSemiboldItalicWoff, SFMonoSemiboldItalicWoff2],
 };
 
+const cottaNormalWeights = {
+  400: [Cotta],
+};
+
+const archiaNormalWeights = {
+  400: [Archia],
+};
+
 const calibre = {
   name: 'Calibre',
   normal: calibreNormalWeights,
@@ -56,6 +67,16 @@ const sfMono = {
   name: 'SF Mono',
   normal: sfMonoNormalWeights,
   italic: sfMonoItalicWeights,
+};
+
+const cotta = {
+  name: 'Cotta',
+  normal: cottaNormalWeights,
+};
+
+const archia = {
+  name: 'Archia',
+  normal: archiaNormalWeights,
 };
 
 const createFontFaces = (family, style = 'normal') => {
@@ -86,8 +107,11 @@ const calibreItalic = createFontFaces(calibre, 'italic');
 const sfMonoNormal = createFontFaces(sfMono);
 const sfMonoItalic = createFontFaces(sfMono, 'italic');
 
+const cottaNormal = createFontFaces(cotta);
+const archiaNormal = createFontFaces(archia);
+
 const Fonts = css`
-  ${calibreNormal + calibreItalic + sfMonoNormal + sfMonoItalic}
+  ${calibreNormal + calibreItalic + sfMonoNormal + sfMonoItalic + cottaNormal + archiaNormal}
 `;
 
 export default Fonts;

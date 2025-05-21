@@ -61,8 +61,7 @@ const StyledPic = styled.div`
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
-    background-color: var(--green);
-
+    z-index: 0;
     &:hover,
     &:focus {
       outline: 0;
@@ -75,15 +74,16 @@ const StyledPic = styled.div`
       .img {
         filter: none;
         mix-blend-mode: normal;
+        z-index: 1;
       }
     }
 
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
+      mix-blend-mode: normal;
       transition: var(--transition);
+      z-index: 1;
     }
 
     &:before,
@@ -95,6 +95,7 @@ const StyledPic = styled.div`
       height: 100%;
       border-radius: var(--border-radius);
       transition: var(--transition);
+      z-index: 1;
     }
 
     &:before {
@@ -105,7 +106,7 @@ const StyledPic = styled.div`
     }
 
     &:after {
-      border: 2px solid var(--green);
+      border: 2px solid var(--lightblue);
       top: 14px;
       left: 14px;
       z-index: -1;
@@ -125,7 +126,18 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = [
+    'Java',
+    'C',
+    'Python',
+    'R',
+    'SQL',
+    'Onshape',
+    'React',
+    'Wordpress',
+    'HTML/CSS',
+    'Adobe Suite',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,33 +147,22 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Hello! I'm Christal Chen, a student at{' '}
+              <a href="https://www.princeton.edu/">Princeton University</a>. My passion for
+              innovation, coding, and design started from creating mini games with Scratch and
+              programming a LEGO Mindstorms EV3 robot. Now, through projects and academic
+              coursework, I have explored different coding languages and tools to improve my
+              problem-solving abilities and express creativity.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              I am passionate about learning new skills, collaborating with others, communicating
+              ideas through public speaking, and discovering more about the world through research.
+              In my free time, I also love storytelling in the form of art, animation, videography,
+              web design, dance, and creative writing.
             </p>
 
-            <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
-            </p>
-
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            <p>I’ve had experience working with:</p>
           </div>
 
           <ul className="skills-list">

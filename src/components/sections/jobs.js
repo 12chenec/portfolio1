@@ -73,7 +73,7 @@ const StyledTabButton = styled.button`
   width: 100%;
   height: var(--tab-height);
   padding: 0 20px 2px;
-  border-left: 2px solid var(--lightest-navy);
+  border-left: 2px solid var(--light-shadow);
   background-color: transparent;
   color: ${({ isActive }) => (isActive ? 'var(--green)' : 'var(--slate)')};
   font-family: var(--font-mono);
@@ -86,16 +86,34 @@ const StyledTabButton = styled.button`
   }
   @media (max-width: 600px) {
     ${({ theme }) => theme.mixins.flexCenter};
+    max-width: var(--tab-width);
     min-width: 120px;
+    height: 4rem;
     padding: 0 15px;
     border-left: 0;
-    border-bottom: 2px solid var(--lightest-navy);
+    border-bottom: 2px solid var(--light-shadow);
     text-align: center;
+    align-items: center;
+    white-space: normal;
   }
 
-  &:hover,
+  &:hover {
+    background-color: rgba(13, 19, 90, 0.1);
+    @media (min-width: 600px) {
+      border-radius: 0px 4px 4px 0px;
+    }
+    @media (max-width: 600px) {
+      border-radius: 4px 4px 0px 0px;
+    }
+  }
   &:focus {
-    background-color: var(--light-navy);
+    background-color: var(--light-shadow);
+    @media (min-width: 600px) {
+      border-radius: 0px 4px 4px 0px;
+    }
+    @media (max-width: 600px) {
+      border-radius: 4px 4px 0px 0px;
+    }
   }
 `;
 
@@ -133,6 +151,10 @@ const StyledTabPanels = styled.div`
 
   @media (max-width: 600px) {
     margin-left: 0;
+  }
+
+  h3 {
+    font-family: var(--font-sans);
   }
 `;
 
@@ -244,7 +266,7 @@ const Jobs = () => {
 
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
-      <h2 className="numbered-heading">Where I’ve Worked</h2>
+      <h2 className="numbered-heading">Experiences</h2>
 
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
@@ -287,7 +309,7 @@ const Jobs = () => {
                     <h3>
                       <span>{title}</span>
                       <span className="company">
-                        &nbsp;@&nbsp;
+                        &nbsp;-&nbsp;
                         <a href={url} className="inline-link">
                           {company}
                         </a>

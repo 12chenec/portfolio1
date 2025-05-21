@@ -7,7 +7,7 @@ import { navLinks } from '@config';
 import { loaderDelay } from '@utils';
 import { useScrollDirection, usePrefersReducedMotion } from '@hooks';
 import { Menu } from '@components';
-import { IconLogo, IconHex } from '@components/icons';
+import { LogoStar, LogoC } from '@components/icons';
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -17,7 +17,7 @@ const StyledHeader = styled.header`
   padding: 0px 50px;
   width: 100%;
   height: var(--nav-height);
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: rgba(29, 35, 96, 0);
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
@@ -38,7 +38,7 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
-        background-color: rgba(10, 25, 47, 0.85);
+        background-color: rgba(29, 35, 96, 0);
         box-shadow: 0 10px 30px -10px var(--navy-shadow);
       `};
 
@@ -57,7 +57,7 @@ const StyledNav = styled.nav`
   ${({ theme }) => theme.mixins.flexBetween};
   position: relative;
   width: 100%;
-  color: var(--lightest-slate);
+  color: var(--white);
   font-family: var(--font-mono);
   counter-reset: item 0;
   z-index: 12;
@@ -67,13 +67,14 @@ const StyledNav = styled.nav`
 
     a {
       color: var(--green);
-      width: 42px;
-      height: 42px;
+      width: 60px;
+      height: 60px;
       position: relative;
       z-index: 1;
 
-      .hex-container {
+      .c-container {
         position: absolute;
+        transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
         top: 0;
         left: 0;
         z-index: -1;
@@ -82,9 +83,10 @@ const StyledNav = styled.nav`
         }
       }
 
-      .logo-container {
-        position: relative;
+      .star-container {
+        position: absolute;
         z-index: 1;
+        transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
         svg {
           fill: none;
           user-select: none;
@@ -100,9 +102,14 @@ const StyledNav = styled.nav`
       &:hover,
       &:focus {
         outline: 0;
-        transform: translate(-4px, -4px);
-        .hex-container {
-          transform: translate(4px, 3px);
+        // transform: translate(-4px, -4px);
+        .star-container {
+          transform: scale(1.25) rotate(360deg);
+        }
+
+        .c-container {
+          // transform: translate(4px, 3px);
+          transform: scale(1.05);
         }
       }
     }
@@ -128,17 +135,18 @@ const StyledLinks = styled.div`
       position: relative;
       counter-increment: item 1;
       font-size: var(--fz-xs);
+      font-weight: bold;
 
       a {
-        padding: 10px;
+        padding: 2rem;
 
-        &:before {
-          content: '0' counter(item) '.';
-          margin-right: 5px;
-          color: var(--green);
-          font-size: var(--fz-xxs);
-          text-align: right;
-        }
+        // &:before {
+        //   content: '0' counter(item) '.';
+        //   margin-right: 5px;
+        //   color: var(--green);
+        //   font-size: var(--fz-xxs);
+        //   text-align: right;
+        // }
       }
     }
   }
@@ -147,6 +155,7 @@ const StyledLinks = styled.div`
     ${({ theme }) => theme.mixins.smallButton};
     margin-left: 15px;
     font-size: var(--fz-xs);
+    font-weight: bold;
   }
 `;
 
@@ -185,20 +194,20 @@ const Nav = ({ isHome }) => {
     <div className="logo" tabIndex="-1">
       {isHome ? (
         <a href="/" aria-label="home">
-          <div className="hex-container">
-            <IconHex />
+          <div className="c-container">
+            <LogoC />
           </div>
-          <div className="logo-container">
-            <IconLogo />
+          <div className="star-container">
+            <LogoStar />
           </div>
         </a>
       ) : (
         <Link to="/" aria-label="home">
-          <div className="hex-container">
-            <IconHex />
+          <div className="c-container">
+            <LogoC />
           </div>
-          <div className="logo-container">
-            <IconLogo />
+          <div className="star-container">
+            <LogoStar />
           </div>
         </Link>
       )}

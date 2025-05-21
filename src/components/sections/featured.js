@@ -23,6 +23,10 @@ const StyledProject = styled.li`
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
 
+  h3 {
+    font-family: var(--font-sans);
+  }
+
   @media (max-width: 768px) {
     ${({ theme }) => theme.mixins.boxShadow};
   }
@@ -120,15 +124,19 @@ const StyledProject = styled.li`
     color: var(--green);
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
-    font-weight: 400;
+    font-weight: 900;
   }
 
   .project-title {
     color: var(--lightest-slate);
     font-size: clamp(24px, 5vw, 28px);
+    display: inline-block;
+    position: relative;
+    z-index: 3;
 
     @media (min-width: 768px) {
       margin: 0 0 20px;
+      max-width: 80%;
     }
 
     @media (max-width: 768px) {
@@ -141,7 +149,7 @@ const StyledProject = styled.li`
           content: '';
           display: block;
           position: absolute;
-          z-index: 0;
+          z-index: 3;
           width: 100%;
           height: 100%;
           top: 0;
@@ -256,7 +264,7 @@ const StyledProject = styled.li`
     a {
       width: 100%;
       height: 100%;
-      background-color: var(--green);
+      background-color: var(--lightblue);
       border-radius: var(--border-radius);
       vertical-align: middle;
 
@@ -284,6 +292,7 @@ const StyledProject = styled.li`
         z-index: 3;
         transition: var(--transition);
         background-color: var(--navy);
+        border-radius: var(--border-radius);
         mix-blend-mode: screen;
       }
     }
@@ -322,6 +331,7 @@ const Featured = () => {
               tech
               github
               external
+              overline
               cta
             }
             html
@@ -348,21 +358,21 @@ const Featured = () => {
   return (
     <section id="projects">
       <h2 className="numbered-heading" ref={revealTitle}>
-        Some Things I’ve Built
+        Projects
       </h2>
 
       <StyledProjectsGrid>
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, tech, github, cover, cta } = frontmatter;
+            const { external, title, tech, github, cover, overline, cta } = frontmatter;
             const image = getImage(cover);
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <div className="project-content">
                   <div>
-                    <p className="project-overline">Featured Project</p>
+                    <p className="project-overline">{overline}</p>
 
                     <h3 className="project-title">
                       <a href={external}>{title}</a>

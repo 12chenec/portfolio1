@@ -19,7 +19,7 @@ const StyledContactSection = styled.section`
     color: var(--green);
     font-family: var(--font-mono);
     font-size: var(--fz-md);
-    font-weight: 400;
+    font-weight: 600;
 
     &:before {
       bottom: 0;
@@ -38,6 +38,7 @@ const StyledContactSection = styled.section`
   .email-link {
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
+    font-weight: 600;
   }
 `;
 
@@ -55,17 +56,17 @@ const Contact = () => {
 
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
-      <h2 className="numbered-heading overline">What’s Next?</h2>
+      <h2 className="numbered-heading overline">Contact</h2>
 
       <h2 className="title">Get In Touch</h2>
 
       <p>
-        Although I’m not currently looking for any new opportunities, my inbox is always open.
-        Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+        I am currently open to internships and research positions! Feel free to reach out and thank
+        you for checking out my portfolio!
       </p>
 
       <a className="email-link" href={`mailto:${email}`}>
-        Say Hello
+        Email
       </a>
     </StyledContactSection>
   );
