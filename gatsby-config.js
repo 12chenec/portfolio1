@@ -7,6 +7,7 @@ module.exports = {
       'Christal Chen is a rising sophomore studying Electrical and Computer Engineering at Princeton Unviersity.',
     siteUrl: 'https://christalchen.vercel.app', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
+    twitterUsername: '@christal_c69248',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
