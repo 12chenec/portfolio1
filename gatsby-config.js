@@ -5,9 +5,8 @@ module.exports = {
     title: 'Christal Chen',
     description:
       'Christal Chen is a rising sophomore studying Electrical and Computer Engineering at Princeton Unviersity.',
-    siteUrl: 'https://brittanychiang.com', // No trailing slash allowed!
+    siteUrl: 'https://christalchen.vercel.app', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@bchiang7',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -20,8 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Brittany Chiang',
-        short_name: 'Brittany Chiang',
+        name: 'Christal Chen',
+        short_name: 'Christal Chen',
         start_url: '/',
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
