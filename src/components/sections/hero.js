@@ -70,7 +70,7 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I am a rising sophomore studying{' '}
+        I am a sophomore studying{' '}
         <a href="https://ece.princeton.edu/" target="_blank" rel="noreferrer">
           Electrical and Computer Engineering
         </a>{' '}
