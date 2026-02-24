@@ -127,14 +127,14 @@ const About = () => {
   }, []);
 
   const skills = [
-    'Java',
-    'C',
     'Python',
+    'C',
+    'Java',
     'R',
     'SQL',
     'Onshape',
     'React',
-    'Wordpress',
+    'C++',
     'HTML/CSS',
     'Adobe Suite',
   ];
