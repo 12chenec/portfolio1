@@ -1,9 +1,9 @@
 ---
-date: '1'
+date: '3'
 title: 'Success of Ecological Restoration Projects in Austin, Texas, Based on the Urban Greenspace Integrity Index'
 cover: './bigmap.png'
 github: ''
-external: '/#projects'
+external: '/AustinERUGII.pdf'
 overline: 'Academic Research'
 cta: ''
 tech:
