@@ -84,7 +84,7 @@ const Hero = () => {
     </>
   );
   const five = (
-    <a className="email-link" href="/resume.pdf">
+    <a className="email-link" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
       Resume
     </a>
   );
