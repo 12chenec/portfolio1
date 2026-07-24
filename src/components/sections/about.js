@@ -158,8 +158,8 @@ const About = () => {
             <p>
               I am passionate about learning new skills, collaborating with others, communicating
               ideas through public speaking, and discovering more about the world through research.
-              In my free time, I also love storytelling in the form of art, animation, videography,
-              web design, dance, and creative writing.
+              In my free time, I also love art, animation, videography, web design, dance, and
+              creative writing.
             </p>
 
             <p>I’ve had experience working with:</p>
