@@ -1,5 +1,5 @@
 ---
-date: '2'
+date: '3'
 title: 'Princeton Birding Society'
 cover: './birding.png'
 external: 'https://birding.princeton.edu/'

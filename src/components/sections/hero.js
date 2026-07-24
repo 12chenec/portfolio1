@@ -70,7 +70,7 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I am a sophomore studying{' '}
+        I am a rising junior studying{' '}
         <a href="https://ece.princeton.edu/" target="_blank" rel="noreferrer">
           Electrical and Computer Engineering
         </a>{' '}
@@ -78,8 +78,8 @@ const Hero = () => {
         <a href="https://www.cs.princeton.edu/" target="_blank" rel="noreferrer">
           Computer Science
         </a>
-        . My areas of interest include robotics, interdisciplinary research, graphic design, and
-        artistic storytelling.
+        . My areas of interest include digital design, robotics, interdisciplinary research, graphic
+        design, and artistic storytelling.
       </p>
     </>
   );

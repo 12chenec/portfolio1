@@ -127,14 +127,14 @@ const About = () => {
   }, []);
 
   const skills = [
+    'Verilog',
     'Python',
-    'C',
+    'C/C++',
     'Java',
     'R',
     'SQL',
     'Onshape',
     'React',
-    'C++',
     'HTML/CSS',
     'Adobe Suite',
   ];

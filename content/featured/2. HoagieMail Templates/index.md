@@ -1,5 +1,5 @@
 ---
-date: '1'
+date: '2'
 title: 'HoagieMail Templates'
 cover: './mail.png'
 external: './templates.mp4'
