@@ -1,5 +1,5 @@
 ---
-date: '4'
+date: '6'
 title: 'Success of Ecological Restoration Projects in Austin, Texas, Based on the Urban Greenspace Integrity Index'
 cover: './bigmap.png'
 github: ''

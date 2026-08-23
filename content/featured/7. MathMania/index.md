@@ -1,5 +1,5 @@
 ---
-date: '5'
+date: '7'
 title: 'MathMania'
 cover: './demo.png'
 github: 'https://github.com/12chenec/mathmania'

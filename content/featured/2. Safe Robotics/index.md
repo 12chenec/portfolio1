@@ -1,5 +1,5 @@
 ---
-date: '1'
+date: '2'
 title: 'Evaluating Branching Rollouts for the Gameplay Safety Filter'
 cover: './go2.png'
 external: './rollouts.pdf'
